@@ -10,10 +10,11 @@ export default Ember.Route.extend({
             if(!description) {
                 return;
             }
-            this.store.createRecord('todo', {
+            var todo = this.store.createRecord('todo', {
                 description: description,
                 isCompleted: false
             });
+            todo.save();
         }
     }
 });
