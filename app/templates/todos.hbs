@@ -1,5 +1,7 @@
+{{input type="text" value=newTodo action="add" placeholder="What needs to be done?"}}
+
 <ul>
-    {{#each}}
-        <li>{{description}}</li>
+    {{#each item in model}}
+        <li>{{item.description}}</li>
     {{/each}}
 </ul>
