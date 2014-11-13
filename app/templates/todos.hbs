@@ -1,10 +1,10 @@
 {{input type="text" value=newTodo action="add" placeholder="What needs to be done?"}}
 
 <ul class="todos">
-    {{#each item in model}}
-        <li {{bind-attr class="item.isCompleted:completed"}}>
-            {{input type="checkbox" checked=item.isCompleted}}
-            {{item.description}}
+    {{#each todo in controller itemController="todo"}}
+        <li {{bind-attr class="todo.isCompleted:completed"}}>
+            {{input type="checkbox" checked=todo.isCompleted}}
+            {{todo.description}}
         </li>
     {{/each}}
 </ul>
