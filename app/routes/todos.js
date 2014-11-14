@@ -15,6 +15,12 @@ export default Ember.Route.extend({
                 isCompleted: false
             });
             todo.save();
+        },
+
+        deleteTodo: function(id){
+            this.store.find('todo', id).then(function(todo){
+                todo.destroyRecord();
+            });
         }
     }
 });

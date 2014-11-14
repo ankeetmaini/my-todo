@@ -9,3 +9,13 @@ html, body {
 .completed {
     text-decoration: line-through;
 }
+
+.cross { 
+	font-size: 20px; 
+	color: #d00; 
+	font-weight: bold; 
+	font-family: helvetica, arial; 
+	line-height: 1;
+	cursor: pointer;
+} 
+

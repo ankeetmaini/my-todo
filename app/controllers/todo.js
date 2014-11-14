@@ -14,5 +14,11 @@ export default Ember.ObjectController.extend({
             return value;
         }
         return todo.get('isCompleted');
-    }.property('isCompleted')
+    }.property('isCompleted'),
+
+    actions: {
+        remove: function(params) {
+            this.send('deleteTodo', params.id);
+        }
+    }
 });

@@ -5,6 +5,7 @@
         <li {{bind-attr class="todo.isCompleted:completed"}}>
             {{input type="checkbox" checked=todo.isCompleted}}
             {{todo.description}}
+            <span class="cross" {{action 'remove' todo}}>&times</span>
         </li>
     {{/each}}
 </ul>
