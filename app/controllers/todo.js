@@ -2,17 +2,17 @@ import Ember from 'ember';
 
 export default Ember.ObjectController.extend({
     isCompleted: function(key, value) {
-        var model = this.get('model');
+        var todo = this.get('model');
         if(value === true) {
-            model.set('isCompleted', true);
-            model.save();
+            todo.set('isCompleted', true);
+            todo.save();
             return value;
         } 
         if(value === false){
-            model.set('isCompleted', false);
-            model.save();
+            todo.set('isCompleted', false);
+            todo.save();
             return value;
         }
-        return model.get('isCompleted');
+        return todo.get('isCompleted');
     }.property('isCompleted')
 });

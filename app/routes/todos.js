@@ -6,7 +6,7 @@ export default Ember.Route.extend({
     },
     
     actions: {
-        createTodo: function(description) {
+        createTodo: function(description){
             if(!description) {
                 return;
             }
