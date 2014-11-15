@@ -19,6 +19,18 @@ export default Ember.ObjectController.extend({
     actions: {
         remove: function(params) {
             this.send('deleteTodo', params.id);
+        },
+
+        edit: function() {
+            this.set('isEditing', true);
+        },
+
+        update: function() {
+            this.send('updateTodo', {
+                description: this.get('model.description'),
+                id: this.get('model.id')
+            });
+            this.set('isEditing', false);
         }
     }
 });
