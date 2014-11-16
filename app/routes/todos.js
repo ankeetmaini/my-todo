@@ -28,6 +28,14 @@ export default Ember.Route.extend({
                 todo.set('description', toBeSavedTodo.description);
                 todo.save();
             });
+        },
+
+        clearCompleted: function() {
+            this.store.filter('todo', function(todo){
+                return todo.get('isCompleted');      
+            }).then(function(todos){
+                todos.invoke('destroyRecord');
+            });
         }
     }
 });

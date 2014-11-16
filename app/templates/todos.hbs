@@ -12,4 +12,8 @@
 	{{link-to 'All' 'todos.index'}}
 	{{link-to 'Active' 'todos.active'}}
 	{{link-to 'Completed' 'todos.completed'}}
+
+	{{#if hasCompleted}}
+		<button {{action 'clearCompleted'}}>Clear Completed</button>
+	{{/if}}
 </div>
