@@ -1,17 +1,7 @@
 {{input type="text" value=newTodo action="add" placeholder="What needs to be done?"}}
 
 <ul class="todos">
-    {{#each todo in controller itemController="todo"}}
-    	{{#if controller.isEditing}}
-    		{{input type="text" value=todo.description autofocus="autofocus" insert-newline="update" focus-out="update"}}
-    	{{else}}
-	        <li {{bind-attr class="todo.isCompleted:completed"}}>
-	            <span>{{input type="checkbox" checked=todo.isCompleted}}</span>
-	            <span {{action 'edit' on="doubleClick"}}>{{todo.description}}</span>
-	            <span class="cross" {{action 'remove' todo}}>&times</span>
-	        </li>
-	    {{/if}}
-    {{/each}}
+    {{outlet}}
 </ul>
 
 <div>
@@ -19,4 +9,9 @@
 </div>
 <div>
 	<span>Completed: </span><strong>{{completed}}</strong>
+</div>
+<div>
+	{{link-to 'All' 'todos.index'}}
+	{{link-to 'Active' 'todos.active'}}
+	{{link-to 'Completed' 'todos.completed'}}
 </div>
