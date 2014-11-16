@@ -1,4 +1,5 @@
-{{#each todo in controller itemController="todo"}}
+<ul class="todos">
+	{{#each todo in controller itemController="todo"}}
     	{{#if controller.isEditing}}
     		{{input type="text" value=todo.description autofocus="autofocus" insert-newline="update" focus-out="update"}}
     	{{else}}
@@ -8,5 +9,7 @@
 	            <span class="cross" {{action 'remove' todo}}>&times</span>
 	        </li>
 	    {{/if}}
+	{{else}}
+	    Yay! Nothing here.
     {{/each}}
-
+</ul>
