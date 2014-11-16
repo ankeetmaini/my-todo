@@ -3,7 +3,7 @@
 <ul class="todos">
     {{#each todo in controller itemController="todo"}}
     	{{#if controller.isEditing}}
-    		{{input type="text" value=todo.description action="update"}}
+    		{{input type="text" value=todo.description autofocus="autofocus" insert-newline="update" focus-out="update"}}
     	{{else}}
 	        <li {{bind-attr class="todo.isCompleted:completed"}}>
 	            <span>{{input type="checkbox" checked=todo.isCompleted}}</span>
