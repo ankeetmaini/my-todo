@@ -1,19 +1,18 @@
-{{input type="text" value=newTodo action="add" placeholder="What needs to be done?"}}
-
- {{outlet}}
-
-<div>
-	<span>Remaining: </span><strong>{{remaining}}</strong>
+<div class="row text-center border">
+    <hr>
+    {{link-to 'All' 'todos.index' class="tab"}}
+    {{link-to 'Active' 'todos.active' class="tab"}}
+    {{link-to 'Completed' 'todos.completed' class="tab"}}
 </div>
-<div>
-	<span>Completed: </span><strong>{{completed}}</strong>
-</div>
-<div>
-	{{link-to 'All' 'todos.index'}}
-	{{link-to 'Active' 'todos.active'}}
-	{{link-to 'Completed' 'todos.completed'}}
 
-	{{#if hasCompleted}}
-		<button {{action 'clearCompleted'}}>Clear Completed</button>
-	{{/if}}
+<div class="row middle">
+    {{input type="text" class="form-control new-todo" value=newTodo action="add" placeholder="What needs to be done?"}}
+
+    {{outlet}}
+</div>
+
+
+<div class="row middle">
+    <span class="pull-left">Remaining <span class="badge">{{remaining}}</span></span>
+    <a class="pull-right text-danger" href="#" {{action "clearCompleted"}}>Clear Completed <span class="badge">{{completed}}</span></a>
 </div>

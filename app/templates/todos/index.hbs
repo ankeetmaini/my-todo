@@ -1,15 +1,17 @@
 <ul class="todos">
 	{{#each todo in controller itemController="todo"}}
     	{{#if controller.isEditing}}
-    		{{input type="text" value=todo.description autofocus="autofocus" insert-newline="update" focus-out="update"}}
+    		{{input type="text" value=todo.description class="form-control new-todo" autofocus="autofocus" insert-newline="update" focus-out="update"}}
     	{{else}}
-	        <li {{bind-attr class="todo.isCompleted:completed"}}>
+	        <li {{bind-attr class=":text-left todo.isCompleted:completed"}}>
 	            <span>{{input type="checkbox" checked=todo.isCompleted}}</span>
 	            <span {{action 'edit' on="doubleClick"}}>{{todo.description}}</span>
-	            <span class="cross" {{action 'remove' todo}}>&times</span>
+	            <span class="cross pull-right" {{action 'remove' todo}}>&times</span>
 	        </li>
 	    {{/if}}
 	{{else}}
-	    Yay! Nothing here.
+        <div class="alert alert-success">
+            <strong>Yay! Nothing here.</strong>
+        </div>
     {{/each}}
 </ul>

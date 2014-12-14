@@ -9,10 +9,6 @@ export default Ember.ArrayController.extend({
         return this.get('model').filterBy('isCompleted', true).get('length');
     }.property('model.@each.isCompleted'),
 
-    hasCompleted: function() {
-        return this.get('completed') > 0;
-    }.property('completed'),
-
     actions: {
         add: function() {
             this.send('createTodo', this.get('newTodo').trim());

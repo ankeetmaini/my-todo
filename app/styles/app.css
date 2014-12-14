@@ -1,9 +1,13 @@
-html, body {
-  margin: 20px;
+.todos {
+    padding: 4px;
+    max-height: 200px;
+    overflow-y: auto;
 }
 
 .todos>li {
     list-style: none;
+    padding: 2px;
+    border-bottom: 1px solid #eee;
 }
 
 .completed {
@@ -17,4 +21,41 @@ html, body {
 	font-family: helvetica, arial; 
 	line-height: 1;
 	cursor: pointer;
+}
+
+.heading {
+    margin: auto;
+    width: 40%;
+}
+
+.middle {
+    margin: auto;
+    width: 40%;
+}
+
+.strike-through {
+    text-decoration: line-through;
+}
+
+.tab {
+    padding: 4px;
+    font-size: 20px;
+}
+
+.new-todo {
+    width: 100%;
+    display: inline;
+    margin-top: 10px;
+    margin-bottom: 5px;
+}
+
+a.active {
+    color: #fff;
+    background-color: #337ab7;
+    border-color: #337ab7;
+}
+
+hr {
+    margin-top: 5px;
+    margin-bottom: 5px;
 }
